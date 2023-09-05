@@ -15,15 +15,27 @@ const Navbar = () => {
           to="/"
           style={{ textDecoration: "none", color: "white", flexGrow: 1 }}
         >
-          Ticket Booking
+          Cinema 
         </Typography>
+
+        <Button
+          color="inherit"
+          component={Link}
+          to="/TicketBooking"
+          style={{ transition: "background-color 0.3s" }}
+         
+          className="nav-button"
+        >
+         Book Show 
+        </Button>
+
+
         <Button
           color="inherit"
           component={Link}
           to="/login"
           style={{ transition: "background-color 0.3s" }}
-          // Add hover effect by changing the background color
-          // when the button is hovered over
+          
           className="nav-button"
         >
           Login
