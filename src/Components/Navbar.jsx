@@ -26,7 +26,7 @@ const Navbar = () => {
          
           className="nav-button"
         >
-         Book Show 
+         BookShows
         </Button>
 
 
