@@ -1,6 +1,6 @@
 import "./Ticketbooking.css"
 import React, { useState } from "react";
-import clsx from "clsx";
+// import clsx from "clsx";
 
 const movies = [
   {
@@ -64,8 +64,8 @@ export default function App() {
       />
 
       <p className="info">
-        Total seats alloted for you is{" "}
-        <span className="count">{selectedSeats.length}</span> at a price of{" "}
+        Total seats alloted for you is
+        <span className="count">{selectedSeats.length}</span> at a price of
         <span className="total">
           {"Rs." + selectedSeats.length * selectedMovie.price}
         </span>
@@ -79,7 +79,7 @@ export default function App() {
         </h4>
         <h3>
           {" "}
-          A <span className="red">{"book My Show"}</span> Group{" "}
+          A <span className="red">{"book My Show"}</span> Group
         </h3>
       </p>
     </div>
@@ -90,8 +90,8 @@ function Movies({ movie, onChange }) {
   return (
     <div className="Movies">
       <h1>
-        {" "}
-        Bin<span className="gold">{"g"}</span>eBoy{" "}
+        
+        Bin<span className="gold">{"g"}</span>eBoy
       </h1>
       <h4> Its Movie time! </h4>
 
@@ -102,7 +102,7 @@ function Movies({ movie, onChange }) {
       />
 
       <p>
-        {" "}
+        
         <label htmlFor="movie">Select your Binge!</label>
       </p>
       <select
@@ -162,11 +162,8 @@ function Cinema({ movie, selectedSeats, onSelectedSeatsChange }) {
             <span
               tabIndex="0"
               key={seat}
-              className={clsx(
-                "seat",
-                isSelected && "selected",
-                isOccupied && "occupied"
-              )}
+              className={`seat ${isSelected ? 'selected' : ''} ${isOccupied ? 'occupied' : ''}`}
+
               onClick={isOccupied ? null : () => handleSelectedState(seat)}
               onKeyPress={
                 isOccupied

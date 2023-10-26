@@ -50,7 +50,7 @@ const moviesData = [
 
 function Home() {
   return (
-    <Container style={{ backgroundColor: 'gray', color: 'white', minHeight: '100vh' }}>
+    <Container style={{ backgroundColor: 'gray', color: 'white', minHeight: '100vh', minWidth: '90vw' }}>
       <Typography variant="h2" style={{ textAlign: 'center', margin: '20px 0' }}>
         Welcome to Movie Ticket Booking
       </Typography>
@@ -60,8 +60,8 @@ function Home() {
             <Card>
               <CardMedia
                 component="img"
-                height="400" // Adjust the height as needed
-                width="300"  // Adjust the width as needed
+                height="400" 
+                width="300"  
                 image={movie.image}
                 alt={movie.title}
               />

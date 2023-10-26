@@ -3,7 +3,7 @@ import Paper from "@mui/material/Paper";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { Container, Grid, Typography } from "@mui/material";
-import { Link, useNavigate } from "react-router-dom"; // Import Link for routing
+import { Link, useNavigate } from "react-router-dom";
 
 import axios from "axios";
 import { toast } from "react-hot-toast";
@@ -21,25 +21,22 @@ const Login = () => {
     const { email, password } = data;
 
     try {
-      const response = await axios.post('/login', {
+      const response = await axios.post("https://ticket-booking-ubdz.onrender.com/login", {
         email,
-        password
+        password,
       });
 
       if (response.data.error) {
-        // Handle login error and show a toast message
         toast.error(response.data.error);
       } else {
-        // Clear form data and navigate to the desired page on successful login
         setData({});
-        // Show success message using toast
+
         toast.success("Successfully logged in!");
-        navigate('/TicketBooking');
+        navigate("/TicketBooking");
       }
     } catch (error) {
-      // Handle network or other errors
       console.error(error);
-      // Show a generic error message to the user
+
       toast.error("An error occurred while logging in.");
     }
   };
@@ -63,7 +60,10 @@ const Login = () => {
                 label="Email"
                 type="email"
                 value={data.email}
-                onChange={(e) => setData({ ...data, email: e.target.value })}
+                onChange={(e) => {
+                  
+                  setData({ ...data, email: e.target.value });
+                }}
                 variant="outlined"
                 fullWidth
                 required
@@ -74,9 +74,7 @@ const Login = () => {
                 label="Password"
                 type="password"
                 value={data.password}
-                onChange={(e) =>
-                  setData({ ...data, password: e.target.value })
-                }
+                onChange={(e) => setData({ ...data, password: e.target.value })}
                 variant="outlined"
                 fullWidth
                 required

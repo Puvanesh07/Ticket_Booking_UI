@@ -25,7 +25,7 @@ const Register = () => {
     try {
       setIsLoading(true); // Start loading animation
 
-      const response = await axios.post("/register", {
+      const response = await axios.post("https://ticket-booking-ubdz.onrender.com/register", {
         name,
         email,
         password,
